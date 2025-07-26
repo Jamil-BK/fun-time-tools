@@ -16,6 +16,7 @@ export default function MotivationPage() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [error, setError] = useState('');
 
+
   // Handle form submit
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,11 +29,13 @@ export default function MotivationPage() {
     }
   };
 
+
   // Shuffle to a random quote
   const shuffleQuote = () => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setQuoteIndex(randomIndex);
   };
+
 
   // Styles
   const pageStyle = {
@@ -101,6 +104,7 @@ export default function MotivationPage() {
     <div style={pageStyle}>
       <h2 style={headingStyle}>Your Daily Dose of Motivation</h2>
 
+
       {/* Form Section */}
       <form onSubmit={handleSubmit} style={formStyle}>
         <input
@@ -114,7 +118,9 @@ export default function MotivationPage() {
         {error && <div style={errorStyle}>{error}</div>}
       </form>
 
+
       {/* Motivational Quote */}
+
       {submitted && (
         <>
           <div style={quoteBoxStyle}>
@@ -125,4 +131,5 @@ export default function MotivationPage() {
       )}
     </div>
   );
+  
 }

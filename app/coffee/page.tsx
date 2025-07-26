@@ -95,23 +95,26 @@ const CoffeeCounterPage = () => {
 
   return (
     <div style={{ textAlign: 'center', paddingTop: '30px', color: 'white' }}>
-      {/* 🔥 Page Title */}
+
+      {/* Page Title */}
       <h1 style={{ fontSize: '34px', fontWeight: 'bold', color: '#FFD700' }}>
         ☕ Coffee Counter ☕
       </h1>
+      
 
-      {/* 🔢 Counter Title */}
+      {/* Counter Title */}
       <h2 style={{ fontSize: '28px', marginTop: '10px' }}>
         Today<br /><span style={{ fontSize: '20px' }}>You Have</span>
       </h2>
 
-      {/* ☕ Red Count Box */}
+
+      {/*  Red Count Box */}
       <div style={counterBoxStyle}>
         <span style={{ fontSize: '60px', fontWeight: 'bold', color: 'yellow' }}>{count}</span>
         <div style={{ fontSize: '22px', fontWeight: 'bold', color: 'white' }}>Cups of Coffee</div>
       </div>
 
-      {/* ✅ Buttons */}
+      {/* Buttons */}
       <div style={{ marginTop: '10px' }}>
         <button onClick={handleAddCup} style={buttonStyle}>
           I had a cup of coffee ☕
@@ -121,10 +124,11 @@ const CoffeeCounterPage = () => {
         </button>
       </div>
 
-      {/* 🎉 Special Message */}
+      {/* Special Message */}
       {getMessage()}
     </div>
   );
 };
+
 
 export default CoffeeCounterPage;

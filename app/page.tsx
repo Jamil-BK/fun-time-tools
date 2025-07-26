@@ -1,6 +1,7 @@
 'use client';
 
 export default function HomePage() {
+
   const pageStyle: React.CSSProperties = {
     backgroundColor: '#000',
     minHeight: '100vh',
@@ -17,18 +18,21 @@ export default function HomePage() {
   };
 
   // Line styles with different colors
+  
   const lineStyles = [
-    { color: '#FFA500' }, // orange
-    { color: '#00FF7F' }, // spring green
-    { color: '#FF69B4' }, // hot pink
-    { color: '#00BFFF', fontWeight: 'bold', marginTop: '25px' }, // deep sky blue
+    { color: '#FFA500' }, 
+    { color: '#00FF7F' }, 
+    { color: '#FF69B4' }, 
+    { color: '#00BFFF', fontWeight: 'bold', marginTop: '25px' }, 
   ];
+
 
   const blinkingTextStyle: React.CSSProperties = {
     animation: 'blink 1.2s linear infinite',
     fontSize: '22px',
     margin: '5px 0',
   };
+
 
   const messages = [
     'Coffee counter is waiting',
@@ -53,7 +57,9 @@ export default function HomePage() {
             {text}
           </p>
         ))}
+
       </main>
+
 
       <style>{`
         @keyframes blink {

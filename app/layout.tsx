@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavMenu from "./NavMenu";
 
+
 export const metadata: Metadata = {
   title: "Fun Time Tools",
   description: "A bright and fun website with small tools",
 };
+
 
 export default function RootLayout({
   children,
@@ -25,6 +27,7 @@ export default function RootLayout({
     color: "#fff",
   };
 
+
   const headerStyle: React.CSSProperties = {
     textAlign: "center",
     padding: "30px 0 10px",
@@ -34,9 +37,10 @@ export default function RootLayout({
     fontWeight: "bold",
     fontFamily: "Arial, sans-serif",
   };
+  
 
   const contentStyle: React.CSSProperties = {
-    flex: 1, // this pushes footer to the bottom
+    flex: 1,
     paddingBottom: "20px",
   };
 
@@ -53,14 +57,17 @@ export default function RootLayout({
   return (
     <html lang="en" style={htmlStyle}>
       <body style={bodyStyle}>
+
         {/* Website Header */}
         <div style={headerStyle}>⭐ Fun Time Tools ⭐</div>
+
 
         {/* Navigation Menu */}
         <NavMenu />
 
         {/* Page Content */}
         <div style={contentStyle}>{children}</div>
+
 
         {/* Sticky Footer */}
         <footer style={footerStyle}>

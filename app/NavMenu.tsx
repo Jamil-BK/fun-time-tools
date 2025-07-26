@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 const NavMenu = () => {
   const pathname = usePathname();
 
+
   // Buttons to show in the navbar
   const buttons = [
     { href: '/', label: 'Home', color: 'orange' },
@@ -14,6 +15,7 @@ const NavMenu = () => {
     { href: '/togglebox', label: 'Tip Box', color: 'skyblue' },
     { href: '/coffee', label: 'Coffee', color: 'limegreen' },
   ];
+
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
@@ -40,5 +42,6 @@ const NavMenu = () => {
     </div>
   );
 };
+
 
 export default NavMenu;

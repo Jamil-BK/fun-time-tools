@@ -62,17 +62,21 @@ const tips: { [key: string]: TipData } = {
   },
 };
 
+
 export default function TipBoxPage() {
   // activeTip saves the currently selected tip
+
   const [activeTip, setActiveTip] = useState<string | null>(null);
 
   // This message shows when no tip is selected
   const defaultMessage = "Click any button above for the respective tips.";
 
+
   // When you click a button, it shows or hides the tip
   const toggleTip = (category: string) => {
     setActiveTip((prev) => (prev === category ? null : category));
   };
+
 
   // This makes all 10 buttons
   const renderButtons = () => {
@@ -99,6 +103,7 @@ export default function TipBoxPage() {
     ));
   };
 
+
   // Style for the main tip box
   const tipStyle: React.CSSProperties = {
     backgroundColor: activeTip ? tips[activeTip].bg : '#fff8dc',
@@ -118,6 +123,7 @@ export default function TipBoxPage() {
     textAlign: 'center',
   };
 
+
   return (
     <div style={{ textAlign: 'center', padding: '30px', backgroundColor: '#000', minHeight: '100vh', color: '#fff' }}>
       <h1 style={{ color: '#FFD700', marginBottom: '25px' }}>💡 Tip Box of the Day</h1>
@@ -125,6 +131,7 @@ export default function TipBoxPage() {
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '900px', margin: '0 auto' }}>
         {renderButtons()}
       </div>
+      
 
       <div style={tipStyle}>
         {activeTip ? tips[activeTip].text : defaultMessage}
