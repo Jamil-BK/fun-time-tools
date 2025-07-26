@@ -1,8 +1,15 @@
 'use client';
 import React, { useState } from 'react';
 
-// All the tip messages, their background and text color
-const tips = {
+// ✅ Define a type for each tip object
+type TipData = {
+  text: string;
+  bg: string;
+  color: string;
+};
+
+// ✅ Define a type for the whole tips object
+const tips: { [key: string]: TipData } = {
   kindness: {
     text: "Kindness is a language that even the deaf can hear and the blind can see. Share it generously every day.",
     bg: '#FFD700',
@@ -69,7 +76,7 @@ export default function TipBoxPage() {
 
   // This makes all 10 buttons
   const renderButtons = () => {
-    return Object.keys(tips).map((key, index) => (
+    return Object.keys(tips).map((key) => (
       <div key={key} style={{ display: 'inline-block', margin: '8px' }}>
         <button
           onClick={() => toggleTip(key)}
@@ -94,7 +101,7 @@ export default function TipBoxPage() {
 
   // Style for the main tip box
   const tipStyle: React.CSSProperties = {
-    backgroundColor: activeTip ? tips[activeTip].bg : '#fff8dc', // light yellow default
+    backgroundColor: activeTip ? tips[activeTip].bg : '#fff8dc',
     color: activeTip ? tips[activeTip].color : '#222',
     minHeight: '150px',
     maxWidth: '700px',
@@ -106,16 +113,15 @@ export default function TipBoxPage() {
     boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
     border: '2px dashed #999',
     display: 'flex',
-    alignItems: 'center', // center vertically
-    justifyContent: 'center', // center horizontally
+    alignItems: 'center',
+    justifyContent: 'center',
     textAlign: 'center',
   };
 
-  // Final JSX layout of the page
   return (
     <div style={{ textAlign: 'center', padding: '30px', backgroundColor: '#000', minHeight: '100vh', color: '#fff' }}>
       <h1 style={{ color: '#FFD700', marginBottom: '25px' }}>💡 Tip Box of the Day</h1>
-      
+
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '900px', margin: '0 auto' }}>
         {renderButtons()}
       </div>
